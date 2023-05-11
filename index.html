@@ -11,12 +11,13 @@
             //tomar las notas de los inputs
             var teoria = parseFloat(inteoria.value);
             var practica = parseFloat(inpractica.value);
+            var puntoe = inextra.checked;
 
             //calcular la nota
             var nota = teoria * 0.3 + practica * 0.7;
 
             //bifurcación simple: si hay punto extra
-            if (inextra.checKed) {
+            if (puntoe) {
                 nota++;
             }
 
@@ -31,7 +32,15 @@
 </head>
 
 <body>
+    <h1>Calcula tu nota final</h1>
+<label for="">Teoria</label><input type="text" id="inteoria">
+<label for="">Práctica</label><input type="text" id="inpractica">
+<label for="">Punto extra:</label><input type="checkbox" id="inextra">
 
+<br><br>
+<button onclick="calcular();">Calcular</button>
+<br><hr>
+<label for="">Nota final:</label><output id="outresultado"></output>
 </body>
 
 </html>
