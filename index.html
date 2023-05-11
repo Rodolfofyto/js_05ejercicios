@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 0</title>
+    <script>
+        function calcular() {
+            //tomar las notas de los inputs
+            var teoria = parseFloat(inteoria.value);
+            var practica = parseFloat(inpractica.value);
+
+            //calcular la nota
+            var nota = teoria * 0.3 + practica * 0.7;
+
+            //bifurcación simple: si hay punto extra
+            if (inextra.checKed) {
+                nota++;
+            }
+
+            //otra bifurcación simple: si nota es > 10
+            if (nota > 10) {
+                nota = 10;
+            }
+
+            outresultado.innerHTML = nota;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
