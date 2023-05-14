@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1C</title>
+    <script>
+        function calcular() {
+            // recojo la nota
+            var nota = parseFloat(innota.value);
+
+            switch (true) {
+                case nota < 0 || nota > 10: document.write('error'); break;
+                case nota < 5: document.write('suspenso'); break;
+                case nota >= 5 && nota < 7: document.write('aprobado'); break;
+                case nota >= 7 && nota < 9: document.write('notable'); break;
+                case nota >= 9: document.write('excelente'); break;
+            }
+        }
+    </script>
 </head>
+
 <body>
-    
-</body>
+    <label for="innota">Indica tu nota y sabrá el resultado</label>
+    <input type="number" id="innota">
+    <br>
+    <button onclick="calcular();">Calcular</button>
 </html>
