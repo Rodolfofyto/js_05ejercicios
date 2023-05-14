@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1A</title>
+    <script>
+        function irpf() {
+            // Recuperar el rango salarial
+            var rango = insalario.value;
+
+            //evealuar el rango
+            switch (rango) {
+                case "1": outresultado.innerHTML = '19%'; break;
+                case "2": outresultado.innerHTML = '24%'; break;
+                case "3": outresultado.innerHTML = '30%'; break;
+                case "4": outresultado.innerHTML = '37%'; break;
+                case "5": outresultado.innerHTML = '45%'; break;
+                default: outresultado.innerHTML = 'ERROR';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <label for="rango">Indica tu rango salarial:</label>
+    <select name="rango" id="insalario">
+        <option value="1">de 0 a 12450</option>
+        <option value="2">de 12450 a 20200</option>
+        <option value="3">de 20200 a 35200</option>
+        <option value="4">de 35200 a 60000</option>
+        <option value="5">de 60000 o más</option>
+    </select>
+    <button onclick="irpf();">IRPF</button><Label> = </Label>
+   
+    <output id="outresultado">0</output>
+</body>
+
+</html>
