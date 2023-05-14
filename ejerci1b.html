@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1B</title>
+    <script>
+        function calcular() {
+            // tomar datos
+            var nota = parseFloat(innota.value);
+            var notaTexto = '';
+
+            //Calcular la nota
+            switch (nota) {
+                case 0:
+                case 1:
+                case 2: notaTexto = 'Deficiente'; break;
+                case 3:
+                case 4: notaTexto = 'Suspenso'; break;
+                case 5:
+                case 6: notaTexto = 'Aprobado'; break;
+                case 7:
+                case 8: notaTexto = 'Notable'; break;
+                case 9:
+                case 10: notaTexto = 'Excelente'; break;
+                default: notaTexto = 'Error en la nota';
+            }
+
+            // Imprimir resultados
+            outnota.innerHTML = notaTexto;
+        }
+    </script>
+</head>
+
+<body>
+    <label for="innota">Indica tu nota</label>
+    <input type="number" id="innota">
+    <br>
+    <button onclick="calcular();">Calcular</button>
+    <br>
+    <hr>
+    <label for="">Usted tiene un:</label><output id="outnota"></output>
+</body>
+
+</html>
