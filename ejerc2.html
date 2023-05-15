@@ -15,11 +15,10 @@
                 var area = base * altura;
                 var perimetro = 2 * (base + altura);
 
-                document.getElementById("outresultado").innerHTML = area + " y ";
-                document.getElementById("outresultad").innerHTML = perimetro + " respectivamente";
+                document.getElementById("outresultado").innerHTML = "El área y el perímetro son: " + area + " y " + perimetro + " respectivamente";
 
             } else {
-                document.write("datos incorrectos");
+                document.getElementById("outresultado").innerHTML = "datos incorrectos";
             }
         }
     </script>
@@ -34,8 +33,7 @@
     <button onclick="calcular();">Calcular</button>
     <br>
     <hr>
-    <label for="">El área y el perímetro son: <output id="outresultado"></output> <output
-            id="outresultad"></output></label>
+    <output id="outresultado"></output>
 </body>
 
 </html>

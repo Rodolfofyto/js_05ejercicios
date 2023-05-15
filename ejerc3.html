@@ -28,11 +28,11 @@
     </style>
     <script>
         function aumento() {
-            // Recuperar el salario anterior y el nivek atual
-            var salario = insalario.value;
+            // Recuperar el salario anterior y el nivel atual
+            var salario = parseFloat(insalario.value);
             var nivel = niveles.value;
-
-            // Plantatear el cálculo
+            
+            // Plantear el cálculo
             var resultado = salario * nivel;
 
             // Mostrar el resultado
@@ -42,7 +42,7 @@
 </head>
 
 <body>
-    <label for="rango">Introduce el salario anterior: <input type="text" id="insalario"> euros.</label><br>
+    <label for="insalario">Introduce el salario anterior: <input type="text" id="insalario"> euros.</label><br>
     <label for="niveles">Nivel:</label>
     <select name="niveles" id="niveles">
         <option value="0.93">Otros niveles</option>
