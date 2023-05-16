@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+
+    <script>
+        function calcular() {
+            //Preparar los valores
+            var radio = parseFloat(document.getElementById('radio').value);
+            var PI = 3.1416;
+            var Op = circunf.value;
+            //Calcular 
+
+            switch (Op) {
+                case "perimetro": document.getElementById("result").innerHTML = 2 * PI * radio; break;
+
+                case "area": document.getElementById("result").innerHTML = PI * radio * radio; break;
+
+                case "diametro": document.getElementById("result").innerHTML = 2 * radio; break;
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Introduce el radio y selecciona la opción que desees calcular.</h1>
+    <label for="radio">Radio:</label>
+    <input type="number" id="radio" value="0" />
+    <select name="" id="circunf">
+        <option value="perimetro">Perímetro</option>
+        <option value="area">Área</option>
+        <option value="diametro">Diámetro</option>
+    </select>
+
+    <button onclick="calcular();">Calcular</button>
+    <br />
+    <hr />
+    <output id="result">0</output>
+</body>
+
+</html>

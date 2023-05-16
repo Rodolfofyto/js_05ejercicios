@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+
+    <script>
+        function calcular() {
+            //Preparar los valores
+            var radio = parseFloat(document.getElementById('radio').value);
+            var PI = 3.1416;
+            //Calcular 
+
+            if (perimetro.checked) {
+                document.getElementById("result").innerHTML = "El perímetro es: " + 2 * PI * radio;
+            }
+            if (area.checked) {
+                document.getElementById("resulta").innerHTML = "El área es: " + PI * radio * radio;
+            }
+            if (diametro.checked) {
+                document.getElementById("resultado").innerHTML = "El diámetro es: " + 2 * radio;
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Introduce el radio y selecciona la opción que desees calcular.</h1>
+    <label for="radio">Radio:</label>
+    <input type="number" id="radio" value="0" />
+    <input type="checkbox" id="perimetro" /><label for="">Perímetro</label>
+    <input type="checkbox" id="area" /><label for="">Área</label>
+    <input type="checkbox" id="diametro" /><label for="">Diámetro</label>
+    <br><br>
+    <button onclick="calcular();">Calcular</button>
+    <br />
+    <hr />
+    <output id="result"></output><br> <output id="resulta"></output> <br><output id="resultado"></output>
+</body>
+
+</html>
