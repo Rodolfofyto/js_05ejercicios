@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6a</title>
+    <script>
+        function comparar() {
+            var n1 = parseFloat(num1.value);
+            var n2 = parseFloat(num2.value);
+            var n3 = parseFloat(num3.value);
+            var resultado = ' ';
+
+            if (n1 > n2) {
+                resultado = n1;
+            } else {
+                resultado = n2;
+            }
+
+            if (resultado > n3) {
+                resultado = resultado;
+            } else {
+                resultado = n3;
+            }
+
+            alert('En número mayor es ' + resultado)
+
+        }
+    </script>
+</head>
+
+<body>
+    <label for="">Introduce los tres número y optén el mayor.</label>
+    <label for="">Números:</label><input type="text" id="num1">
+    <input type="text" id="num2"><input type="text" id="num3">
+    <br><br>
+    <button onclick="comparar();">Comparar</button>
+</body>
+
+</html>
