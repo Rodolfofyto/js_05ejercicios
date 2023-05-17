@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculador de notas</title>
 </head>
+
 <body>
-    
+    <h1>Calculadora de notas</h1>
+    <h2>Para calcular el resultado de los test</h2>
+    <section>
+        <label for="">Entrada de datos</label>
+        <label for="">Parámetros</label>
+        <label for="inpregunta">Pregustas:</label><input type="text" id="inpregunta" /><br />
+        <label for="xciento">Descuento por error:</label>
+        <select name="descuento" id="xciento">
+            <option value="">0%</option>
+            <option value="">25%</option>
+            <option value="">33%</option>
+            <option value="">50%</option>
+            <option value="">66%</option>
+            <option value="">75%</option>
+            <option value="">100%</option>
+        </select><br />
+        <label for="inacierto">Aciertos:</label><input type="text" id="inacierto" /><br />
+        <label for="inerror">Errores:</label><input type="text" id="inerror" /><br />
+        <br>
+        <button onclick="calcular();">calcular</button>
+    </section>
+    <section>
+        <label for="">Aciertos:</label><output id="inacierto"></output><br />
+        <label for="inerror">Errores:</label><output id="inerror"></output><br />
+        <label for="">No contestadas:</label><output id="inacierto"></output><br />
+        <label for="">Nota sin descontar:</label><output id="inacierto"></output><br />
+        <label for="">Final sobre 10:</label><output id="inacierto"></output><br />
+        <output id="nfinal">...</output>
+    </section>
 </body>
+
 </html>
