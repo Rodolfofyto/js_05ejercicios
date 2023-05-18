@@ -6,38 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculador de notas</title>
+    <style>
+
+    </style>
+    <script>
+        function calcular() {
+            //Reseteo
+            document.getElementById("inAcierto").innerHTML = ('');
+            document.getElementById("inError").innerHTML = ('');
+            document.getElementById("noContestada").innerHTML = ('');
+            document.getElementById("notSinDescont").innerHTML = ('');
+            document.getElementById("finalS10").innerHTML = ('');
+            document.getElementById("nFinal").innerHTML = ('');
+
+            //recojo los datos
+            var p = parseInt(document.getElementById("inPregunta").value);
+            var d = parseFloat(document.getElementById("xCiento").value);
+            var a = parseInt(document.getElementById("inAcierto").value);
+            var e = parseInt(document.getElementById("inError").value);
+
+            //Planteo las operaciones
+            var NCT = p - (a + e);
+            var NSD = (a / p) * 10;
+
+            // Condicional para la nota final
+            if (NSD < 5) {
+                document.getElementById("nFinal").innerHTML = "SUSPENSO";
+            } else {
+                if (NSD > 9) {
+                    document.getElementById("nFinal").innerHTML = "EXCELENTE";
+                } else {
+                    document.getElementById("nFinal").innerHTML = "APROBADO";
+                }
+            }
+
+            // Muestro los resultados
+            document.getElementById("inAcierto").innerHTML = a;
+            document.getElementById("inError").innerHTML = e;
+            document.getElementById("noContestada").innerHTML = NCT;
+            document.getElementById("notSinDescont").innerHTML = NSD;
+            document.getElementById("finalS10").innerHTML = ('');
+        }
+    </script>
 </head>
 
 <body>
-    <h1>Calculadora de notas</h1>
-    <h2>Para calcular el resultado de los test</h2>
-    <section>
-        <label for="">Entrada de datos</label>
-        <label for="">Parámetros</label>
-        <label for="inpregunta">Pregustas:</label><input type="text" id="inpregunta" /><br />
-        <label for="xciento">Descuento por error:</label>
-        <select name="descuento" id="xciento">
-            <option value="">0%</option>
-            <option value="">25%</option>
-            <option value="">33%</option>
-            <option value="">50%</option>
-            <option value="">66%</option>
-            <option value="">75%</option>
-            <option value="">100%</option>
-        </select><br />
-        <label for="inacierto">Aciertos:</label><input type="text" id="inacierto" /><br />
-        <label for="inerror">Errores:</label><input type="text" id="inerror" /><br />
-        <br>
-        <button onclick="calcular();">calcular</button>
-    </section>
-    <section>
-        <label for="">Aciertos:</label><output id="inacierto"></output><br />
-        <label for="inerror">Errores:</label><output id="inerror"></output><br />
-        <label for="">No contestadas:</label><output id="inacierto"></output><br />
-        <label for="">Nota sin descontar:</label><output id="inacierto"></output><br />
-        <label for="">Final sobre 10:</label><output id="inacierto"></output><br />
-        <output id="nfinal">...</output>
-    </section>
+    <header>
+        <h1>Calculadora de notas</h1>
+        <h2>Para calcular el resultado de los test</h2>
+    </header>
+    <main>
+        <article>
+            <label for="">Entrada de datos</label>
+            <label for="">Parámetros</label>
+            <label for="inPregunta">Pregustas:</label><input type="number" id="inPregunta" /><br />
+            <label for="xCiento">Descuento por error:</label>
+            <select name="descuento" id="xCiento">
+                <option value="">0%</option>
+                <option value="">25%</option>
+                <option value="">33%</option>
+                <option value="">50%</option>
+                <option value="">66%</option>
+                <option value="">75%</option>
+                <option value="">100%</option>
+            </select><br />
+            <label for="inAcierto">Aciertos:</label><input type="number" id="inAcierto" /><br />
+            <label for="inError">Errores:</label><input type="number" id="inError" /><br />
+            <br>
+            <button onclick="calcular();">calcular</button>
+        </article>
+        <section>
+            <label for="inAcierto">Aciertos:</label><output id="inAcierto"></output><br />
+            <label for="inError">Errores:</label><output id="inError"></output><br />
+            <label for="noContestada">No contestadas:</label><output id="noContestada"></output><br />
+            <label for="notSinDescont">Nota sin descontar:</label><output id="notSinDescont"></output><br />
+            <label for="finalS10">Final sobre 10:</label><output id="finalS10"></output><br />
+            <output id="nFinal">...</output>
+        </section>
+    </main>
 </body>
 
 </html>
