@@ -12,8 +12,8 @@
     <script>
         function calcular() {
             //Reseteo
-            document.getElementById("inAcierto").innerHTML = ('');
-            document.getElementById("inError").innerHTML = ('');
+            document.getElementById("outAcierto").innerHTML = ('');
+            document.getElementById("outError").innerHTML = ('');
             document.getElementById("noContestada").innerHTML = ('');
             document.getElementById("notSinDescont").innerHTML = ('');
             document.getElementById("finalS10").innerHTML = ('');
@@ -41,10 +41,10 @@
             }
 
             // Muestro los resultados
-            document.getElementById("inAcierto").innerHTML = a;
-            document.getElementById("inError").innerHTML = e;
+            document.getElementById("outAcierto").innerHTML = a;
+            document.getElementById("outError").innerHTML = e;
             document.getElementById("noContestada").innerHTML = NCT;
-            document.getElementById("notSinDescont").innerHTML = NSD;
+            document.getElementById("notSinDescont").innerHTML = NSD.toFixed(1);
             document.getElementById("finalS10").innerHTML = ('');
         }
     </script>
@@ -76,12 +76,12 @@
             <button onclick="calcular();">calcular</button>
         </article>
         <section>
-            <label for="inAcierto">Aciertos:</label><output id="inAcierto"></output><br />
-            <label for="inError">Errores:</label><output id="inError"></output><br />
-            <label for="noContestada">No contestadas:</label><output id="noContestada"></output><br />
-            <label for="notSinDescont">Nota sin descontar:</label><output id="notSinDescont"></output><br />
-            <label for="finalS10">Final sobre 10:</label><output id="finalS10"></output><br />
-            <output id="nFinal">...</output>
+            <label for="outAcierto">Aciertos: </label><output id="outAcierto"></output><br />
+            <label for="outError">Errores: </label><output id="outError"></output><br />
+            <label for="noContestada">No contestadas: </label><output id="noContestada"></output><br />
+            <label for="notSinDescont">Nota sin descontar: </label><output id="notSinDescont"></output><br />
+            <label for="finalS10">Final sobre 10: </label><output id="finalS10"></output><br />
+            <output id="nFinal"> ...</output>
         </section>
     </main>
 </body>
