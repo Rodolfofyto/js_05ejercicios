@@ -7,7 +7,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculador de notas</title>
     <style>
+        *{ 
+            font-weight: bold;
+            font-size: 1em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        body {
+            background-image: url(Calculadora.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
+        header {
+            border: 2px dashed #000000;
+            text-align: center;
+            font-size: 2vw;
+        }
+
+        main {
+            border: 2px dashed #000000;
+            display: flex;
+            background-color: rgb(255, 255, 255, 0.8) ;
+            margin-top: 3%;
+            padding: 2%;
+        }
+
+        main article {
+            flex: 2;
+        }
+
+        main section {
+            margin-top: 6%;
+            flex: 1;
+        }
+
+        input, select{
+            padding: 1%;
+            margin-bottom: 3%;
+        }
+        article>label{
+            display: inline-block;
+            min-width: 210px;
+        }
+
+        button{ 
+            margin-left: 45%;
+            padding: 1%;
+            background-color: rgb(249, 148, 16);
+            color: rgb(255, 255, 255);
+            border-color: transparent;
+            cursor: pointer;
+        }
+        
+       output:last-of-type{
+        font-size: 1.5em;
+       }
+
+       
     </style>
     <script>
         function calcular() {
@@ -28,6 +84,7 @@
             //Planteo las operaciones
             var NCT = p - (a + e);
             var NSD = (a / p) * 10;
+            var NFD = NSD - (0.2 * d * e);
 
             // Condicional para la nota final
             if (NSD < 5) {
@@ -45,7 +102,7 @@
             document.getElementById("outError").innerHTML = e;
             document.getElementById("noContestada").innerHTML = NCT;
             document.getElementById("notSinDescont").innerHTML = NSD.toFixed(1);
-            document.getElementById("finalS10").innerHTML = ('');
+            document.getElementById("finalS10").innerHTML = NFD.toFixed(1);
         }
     </script>
 </head>
@@ -57,18 +114,18 @@
     </header>
     <main>
         <article>
-            <label for="">Entrada de datos</label>
-            <label for="">Parámetros</label>
+            <label for="">Entrada de datos</label><br/><br />
+            <label for="">Parámetros</label><br/>
             <label for="inPregunta">Pregustas:</label><input type="number" id="inPregunta" /><br />
             <label for="xCiento">Descuento por error:</label>
             <select name="descuento" id="xCiento">
-                <option value="">0%</option>
-                <option value="">25%</option>
-                <option value="">33%</option>
-                <option value="">50%</option>
-                <option value="">66%</option>
-                <option value="">75%</option>
-                <option value="">100%</option>
+                <option value="0">0%</option>
+                <option value="0.25">25%</option>
+                <option value="0.33">33%</option>
+                <option value="0.5">50%</option>
+                <option value="0.66">66%</option>
+                <option value="0.75">75%</option>
+                <option value="1">100%</option>
             </select><br />
             <label for="inAcierto">Aciertos:</label><input type="number" id="inAcierto" /><br />
             <label for="inError">Errores:</label><input type="number" id="inError" /><br />
@@ -76,11 +133,11 @@
             <button onclick="calcular();">calcular</button>
         </article>
         <section>
-            <label for="outAcierto">Aciertos: </label><output id="outAcierto"></output><br />
-            <label for="outError">Errores: </label><output id="outError"></output><br />
-            <label for="noContestada">No contestadas: </label><output id="noContestada"></output><br />
-            <label for="notSinDescont">Nota sin descontar: </label><output id="notSinDescont"></output><br />
-            <label for="finalS10">Final sobre 10: </label><output id="finalS10"></output><br />
+            <label for="outAcierto">Aciertos: </label><output id="outAcierto"></output><br /><br />
+            <label for="outError">Errores: </label><output id="outError"></output><br /><br />
+            <label for="noContestada">No contestadas: </label><output id="noContestada"></output><br /><br />
+            <label for="notSinDescont">Nota sin descontar: </label><output id="notSinDescont"></output><br /><br />
+            <label for="finalS10">Final sobre 10: </label><output id="finalS10"></output><br /><br /><br /><br />
             <output id="nFinal"> ...</output>
         </section>
     </main>
