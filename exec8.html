@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function lados() {
+           // reset
+           document.getElementById("outResult").innerHTML = " ";
+           document.getElementById("outResult").innerHTML = " ";
+           document.getElementById("outResult").innerHTML = " ";
+           document.getElementById("outResult").innerHTML = " ";
+
+            //recojo los datos
+            var ab = parseInt(document.getElementById("inab").value);
+            var ac = parseFloat(document.getElementById("inac").value);
+            var bc = parseInt(document.getElementById("inbc").value);
+
+
+            //Planteo las operaciones
+            if ((ab + ac) > bc && (ab + bc) > ac && (ac + bc) > ab) {
+
+                if (ab == ac && ab != bc || ab == bc && ab != ac || ac == bc && bc != ab) {
+                    document.getElementById("outResult").innerHTML = "ISÓSELES";
+                }
+                if (ab == ac && ab == bc) {
+                    document.getElementById("outResult").innerHTML = "EQUILÁTERO";
+                }
+                if (ab != ac && ab != bc && bc != ac) {
+                    document.getElementById("outResult").innerHTML = "ESCALENO";
+                }
+            } else {
+                document.getElementById("outResult").innerHTML = "ERROR ";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <label for="">Introduce los lados y sabras que típo de triángulo es.</label><br /><br />
+
+    <label for="inab">Lado a-b:</label><input type="number" id="inab" /><br />
+    <label for="inac">Lado a-c:</label><input type="number" id="inac" /><br />
+    <label for="inbc">Lado b-c:</label><input type="number" id="inbc" /><br />
+
+    <br>
+    <button onclick="lados();">calcular</button>
+    <br>
+    <hr>
+    <label for="outResult">El triángulo es: </label><output id="outResult"></output>
+</body>
+
+</html>
