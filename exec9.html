@@ -8,27 +8,67 @@
     <title>Execicio 9</title>
     <style>
         body {
-            width: 50%;
+            width: 70%;
         }
-        article{
+
+        article {
+            margin: 2%;
+            height: 800px;
             background-image: url(fiesta.png);
-            
+            background-repeat: no-repeat;
+        }
+
+        hr {
+            margin-left: 0;
+            width: 60%;
         }
     </style>
+    <script>
+
+        var min = Math.ceil(1);
+        var max = Math.floor(128);
+        var result = Math.floor(Math.random() * (max - min + 1) + min);
+        var intento = 0;
+
+        function adivina(min, max) {
+            var n = parseInt(document.getElementById('inNumero').value);
+            intento++;
+
+            if (n == result) {
+                document.getElementById('outResult').innerHTML = " FELICIDADES HAZ ACERTADO ";
+                document.getElementById("outIntento").innerHTML = " Lo haz logrado en " + intento;
+            } else {
+                if (n < result && n != result) {
+                    document.getElementById('outResult').innerHTML = " El número es mayor... ";
+                    document.getElementById("outIntento").innerHTML = intento;
+                } else {
+                    document.getElementById('outResult').innerHTML = " El número es menor...";
+                    document.getElementById("outIntento").innerHTML = intento;
+                }
+            }
+        }
+
+        function reset() {
+            result = Math.floor(Math.random() * (max - min + 1) + min);
+            document.getElementById('outResult').innerHTML = ' ';
+            inNumero.value = ' ';
+            outIntento.innerHTML = ' ';
+        }
+    </script>
 </head>
 
 <body>
     <article>
         <h1>Adivina el número</h1>
 
-        <label for="">Número:</label><input type="number" />
+        <label for="">Número:</label><input type="number" id="inNumero" min="1" max="128" />
         <button onclick="adivina();">Ok</button>
-        <button type="reset">Reiniciar</button>
+        <button type="reset" onclick="reset();">Reiniciar</button>
         <br>
         <hr>
-        <span>Resultado: </span><span id="outresult"></span>
+        <span>Resultado: </span><span id="outResult"></span>
         <br>
-        <span>Intentos:</span><span id="outintento"></span>
+        <span>Intentos:</span><span id="outIntento"></span>
     </article>
 </body>
 
